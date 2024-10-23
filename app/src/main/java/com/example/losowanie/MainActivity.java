@@ -1,5 +1,6 @@
 package com.example.losowanie;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.i("CYKL ZYCIA", "wykonana metoda onStart");
         textView = findViewById(R.id.liczba);
         losuj = findViewById(R.id.button);
 
@@ -39,5 +41,40 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         //metoda cyklu zycia nie moze byc wywolywana przez programiste
         Log.i("CYKL ZYCIA", "wykonana metoda onStart");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("CYKL ZYCIA", "wykonana metoda onStop");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("CYKL ZYCIA", "wykonana metoda onResume");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("CYKL ZYCIA", "wykonana metoda onDestroy");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("CYKL ZYCIA", "wykonana metoda onPause");
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i("CYKL ZYCIA", "wykonana metoda onSaveInstanceState");
     }
 }
